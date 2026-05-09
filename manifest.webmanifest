@@ -1,0 +1,9 @@
+{
+  "name": "Success 模式中文攻略资料库",
+  "short_name": "Success 攻略",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f6f7f2",
+  "theme_color": "#0b7a75",
+  "lang": "zh-CN"
+}
