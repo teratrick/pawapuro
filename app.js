@@ -343,7 +343,9 @@ function renderMarkdown(markdown) {
         sectionOpen = true;
       }
 
-      html.push(`<h${Math.min(level, 4)}>${parseInlineMarkdown(title)}</h${Math.min(level, 4)}>`);
+      const headingTag = `h${Math.min(level, 4)}`;
+      const headingId = level === 2 ? "" : ` id="${id}"`;
+      html.push(`<${headingTag}${headingId}>${parseInlineMarkdown(title)}</${headingTag}>`);
       if (level <= 3) {
         toc.push({ id, level, title });
       }
