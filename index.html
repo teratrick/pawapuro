@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0b7a75" />
+    <meta
+      name="description"
+      content="《eBaseball 实况力量棒球 2024-2025》Success 模式中文攻略资料库，适合 GitHub Pages 托管与移动端查阅。"
+    />
+    <title>Success 模式中文攻略资料库</title>
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="header-copy">
+        <p class="eyebrow">eBaseball 2024-2025</p>
+        <h1>Success 模式中文攻略资料库</h1>
+        <p class="intro">把攻略拆成剧本选择、阶段清单、机制速查和全文资料，方便边玩边看，也方便后续做安卓 App。</p>
+      </div>
+      <div class="route-card" aria-label="新手推荐路线">
+        <span>推荐路线</span>
+        <strong>12 球团 → 千将高校 → Powerful Futures</strong>
+      </div>
+    </header>
+
+    <main>
+      <nav class="top-tabs" aria-label="页面导航">
+        <a href="#choose">选择</a>
+        <a href="#scripts">剧本</a>
+        <a href="#checklist">清单</a>
+        <a href="#terms">速查</a>
+        <a href="#guide">全文</a>
+      </nav>
+
+      <section id="choose" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Start Here</p>
+          <h2>先决定你要哪种体验</h2>
+        </div>
+        <div class="choice-grid">
+          <article class="choice-card is-recommended">
+            <span class="badge">最适合第一局</span>
+            <h3>职业棒球 12 球团</h3>
+            <p>规则直观，可以学习评价、任务、比赛、Special Tag 和女友事件。</p>
+            <dl>
+              <div><dt>时间</dt><dd>2-3 小时</dd></div>
+              <div><dt>稳定性</dt><dd>中等</dd></div>
+              <div><dt>关键词</dt><dd>监督评价、教练任务</dd></div>
+            </dl>
+          </article>
+          <article class="choice-card">
+            <span class="badge">短局循环</span>
+            <h3>千将高校</h3>
+            <p>适合练习资源规划，通过 Captain Circle 和 CP 建立长期育成基础。</p>
+            <dl>
+              <div><dt>时间</dt><dd>1-1.5 小时</dd></div>
+              <div><dt>稳定性</dt><dd>较稳定</dd></div>
+              <div><dt>关键词</dt><dd>CP、潜力经验</dd></div>
+            </dl>
+          </article>
+          <article class="choice-card">
+            <span class="badge">上限挑战</span>
+            <h3>Powerful Futures</h3>
+            <p>适合想做强力球员的玩家，核心是把 Metayancy 爆发安排到高收益回合。</p>
+            <dl>
+              <div><dt>时间</dt><dd>约 2 小时</dd></div>
+              <div><dt>稳定性</dt><dd>偏不稳定</dd></div>
+              <div><dt>关键词</dt><dd>Yans Break、连续练习</dd></div>
+            </dl>
+          </article>
+        </div>
+      </section>
+
+      <section id="scripts" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Scenario</p>
+          <h2>剧本攻略</h2>
+        </div>
+        <div class="segmented" role="tablist" aria-label="剧本选择">
+          <button class="segment is-active" type="button" role="tab" aria-selected="true" data-script="fighters">12 球团</button>
+          <button class="segment" type="button" role="tab" aria-selected="false" data-script="captain">千将高校</button>
+          <button class="segment" type="button" role="tab" aria-selected="false" data-script="future">Futures</button>
+        </div>
+        <article class="script-panel" id="script-panel" aria-live="polite"></article>
+      </section>
+
+      <section id="checklist" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Run Plan</p>
+          <h2>第一周目行动清单</h2>
+        </div>
+        <div class="toolbar">
+          <button class="ghost-button" type="button" id="reset-checks">清空勾选</button>
+          <span id="progress-text">0 / 12</span>
+        </div>
+        <div class="checklist-grid" id="checklist-list"></div>
+      </section>
+
+      <section id="terms" class="section two-column">
+        <div>
+          <div class="section-heading">
+            <p class="eyebrow">Search</p>
+            <h2>术语速查</h2>
+          </div>
+          <label class="search-box">
+            <span>搜索术语</span>
+            <input id="term-search" type="search" placeholder="例如 CP、金特、监督评价" autocomplete="off" />
+          </label>
+          <div class="term-list" id="term-list"></div>
+        </div>
+        <aside class="mistake-panel">
+          <div class="section-heading">
+            <p class="eyebrow">Warnings</p>
+            <h2>常见误区</h2>
+          </div>
+          <div class="mistake-list" id="mistake-list"></div>
+        </aside>
+      </section>
+
+      <section id="guide" class="section">
+        <div class="section-heading guide-heading">
+          <div>
+            <p class="eyebrow">Full Guide</p>
+            <h2>Success 全文资料</h2>
+          </div>
+          <a class="doc-link" href="success-mode-guide.zh-CN.md">打开 Markdown 原文</a>
+        </div>
+        <div class="guide-layout">
+          <aside class="guide-toc" aria-label="全文目录">
+            <label class="search-box">
+              <span>搜索全文章节</span>
+              <input id="guide-search" type="search" placeholder="例如 金特、ヤンスブレイク、楽天" autocomplete="off" />
+            </label>
+            <nav id="guide-toc"></nav>
+          </aside>
+          <article class="guide-content" id="guide-content" aria-live="polite">
+            <p class="loading-text">正在读取本地攻略文档...</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section source-section">
+        <div class="section-heading">
+          <p class="eyebrow">Sources</p>
+          <h2>资料来源</h2>
+        </div>
+        <p>
+          内容基于本地中文整理稿
+          <a href="success-mode-guide.zh-CN.md">success-mode-guide.zh-CN.md</a>，并参考 Game8 的
+          <a href="https://game8.jp/pawapuro2024-2025/625728">Success 总览</a>、
+          <a href="https://game8.jp/pawapuro2024-2025/625732">Powerful Futures</a>、
+          <a href="https://game8.jp/pawapuro2024-2025/625733">职业棒球 12 球团</a>、
+          <a href="https://game8.jp/pawapuro2024-2025/625734">千将高校</a>。
+        </p>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
