@@ -518,6 +518,7 @@ dd {
 .guide-content h4 {
   line-height: 1.25;
   letter-spacing: 0;
+  scroll-margin-top: 76px;
 }
 
 .guide-content h1 {
